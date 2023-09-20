@@ -273,7 +273,7 @@ function Stats({ valorTotal }) {
   return (
     <div>
       <h3 className="stats">
-        Valor total das compras R$ <span>{Number(valorTotal)}</span>
+        Valor total das compras R$ <span>{Number(valorTotal).toFixed(2)}</span>
       </h3>
     </div>
   );
