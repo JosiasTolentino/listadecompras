@@ -73,6 +73,8 @@ function Form({ onAddProduct }) {
 
     if (!productName || !categoria || !quantidade || !valor) return;
 
+    setValor(valor.toFixed(2));
+
     const newProduct = {
       productName,
       categoria,
@@ -96,6 +98,7 @@ function Form({ onAddProduct }) {
       <label>Produto: </label>
       <input
         type="text"
+        placeholder="Nome do produto..."
         value={productName}
         onChange={(e) => setProductName(e.target.value)}
       ></input>
@@ -123,7 +126,9 @@ function Form({ onAddProduct }) {
 
       <label>Valor:</label>
       <input
-        type="text"
+        placeholder="0,00"
+        type="number"
+        step={0.01}
         value={valor}
         onChange={(e) => setValor(Number(e.target.value))}
       ></input>
