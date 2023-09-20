@@ -7,7 +7,7 @@ const initialProducts = [
     productName: "Arroz",
     categoria: "Alimentação",
     quantidade: 4,
-    valor: 3.5,
+    valor: "6.79",
     packed: false,
     id: 123,
   },
@@ -15,7 +15,7 @@ const initialProducts = [
     productName: "Feijao",
     categoria: "Alimentação",
     quantidade: 2,
-    valor: 4.2,
+    valor: "4.29",
     packed: false,
     id: 124,
   },
@@ -23,7 +23,7 @@ const initialProducts = [
     productName: "Sabonete",
     categoria: "Higiene",
     quantidade: 5,
-    valor: 2.5,
+    valor: "3.89",
     packed: false,
     id: 125,
   },
@@ -31,7 +31,7 @@ const initialProducts = [
     productName: "Detergente",
     categoria: "Limpeza",
     quantidade: 4,
-    valor: 1.8,
+    valor: "2.39",
     packed: false,
     id: 126,
   },
@@ -45,7 +45,7 @@ export default function App() {
   }
 
   const valorTotal = products
-    .map((product) => product.quantidade * product.valor)
+    .map((product) => Number(product.quantidade * product.valor))
     .reduce((a, b) => a + b);
 
   return (
@@ -72,8 +72,6 @@ function Form({ onAddProduct }) {
     e.preventDefault();
 
     if (!productName || !categoria || !quantidade || !valor) return;
-
-    setValor(valor.toFixed(2));
 
     const newProduct = {
       productName,
@@ -130,9 +128,7 @@ function Form({ onAddProduct }) {
         type="number"
         step={0.01}
         value={valor}
-        onChange={(e) =>
-          setValor(Number(e.target.value).toLocaleString("pt-br"))
-        }
+        onChange={(e) => setValor(Number(e.target.value))}
       ></input>
 
       <button className="add-button">Adicionar produto</button>
@@ -256,7 +252,7 @@ function ProductsList({ products, setProducts, children }) {
               <span
                 style={product.packed ? { textDecoration: "line-through" } : {}}
               >
-                R$ {product.quantidade * product.valor}
+                R$ {(product.quantidade * product.valor).toFixed(2)}
               </span>
               <button onClick={() => handleDeleteProduct(product.id)}>
                 ❌
