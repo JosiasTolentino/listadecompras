@@ -51,6 +51,13 @@ h2 button {
   display: grid;
   grid-template-columns: 0.5fr 1fr 0.5fr 1fr;
   gap: 1rem;
+  align-items: center;
+}
+
+.form > input,
+.form > select {
+  border-radius: 5rem;
+  padding: 0.5rem 1rem;
 }
 
 .add-button {
@@ -133,4 +140,20 @@ input[type="checkbox"] {
 .stats {
   padding: 3rem 0 2rem 0;
   text-align: center;
+}
+
+@media (max-width: 650px) {
+  HTML {
+    font-size: 60%;
+  }
+  body {
+    padding: 2rem;
+  }
+
+  .form {
+    align-items: center;
+    max-width: 30rem;
+    grid-template-columns: 0.5fr 1fr;
+    margin: 0 auto;
+  }
 }
