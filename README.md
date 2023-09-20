@@ -1,1 +1,2 @@
-Projeto pessoal para praticar principios aprendidos de React
+# listadecompras
+Aplicativo de criação própria para praticar React.
