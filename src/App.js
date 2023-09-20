@@ -130,7 +130,9 @@ function Form({ onAddProduct }) {
         type="number"
         step={0.01}
         value={valor}
-        onChange={(e) => setValor(Number(e.target.value))}
+        onChange={(e) =>
+          setValor(Number(e.target.value).toLocaleString("pt-br"))
+        }
       ></input>
 
       <button className="add-button">Adicionar produto</button>
