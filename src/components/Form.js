@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function Form({ onAddProduct }) {
   const [productName, setProductName] = useState("");
-  const [categoria, setCategoria] = useState("");
+  const [categoria, setCategoria] = useState("Alimentação");
   const [quantidade, setQuantidade] = useState(1);
   const [valor, setValor] = useState("");
   const categorias = ["Alimentação", "Higiene", "Limpeza", "Outros"];

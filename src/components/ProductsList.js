@@ -4,6 +4,13 @@ import ArrowDown from "./ArrowDown";
 
 export default function ProductsList({ products, setProducts, children }) {
   const [isOpen, setIsOpen] = useState(true);
+
+  const isEmpty = products.filter(
+    (product) => product.categoria === `${children}`
+  ).length;
+
+  console.log(isEmpty);
+
   function handleOpen() {
     setIsOpen((isOpen) => !isOpen);
   }
@@ -21,7 +28,7 @@ export default function ProductsList({ products, setProducts, children }) {
   }
 
   return (
-    <div className="products">
+    <div className={isEmpty ? "products" : "hide"}>
       <h2>
         {children}
         <button onClick={handleOpen}>

@@ -8,8 +8,12 @@ export default function Stats({ valorTotal, products }) {
         Valor total das compras R$ <span>{Number(valorTotal).toFixed(2)}</span>
       </h3>
       <p>
-        Você possui {products.length} itens na sua lista
-        {productsMissing > 1
+        {products.length === 0
+          ? "Adicione produtos à sua lista de compras ✍🏻"
+          : `Você possui ${products.length} itens na sua lista`}
+        {products.length === 0
+          ? ""
+          : productsMissing > 1
           ? `, ainda faltam ${productsMissing} itens para finalizar suas compras. 🛒`
           : productsMissing === 1
           ? ", falta apenas mais 1 item para finalizar suas compras... 👀"

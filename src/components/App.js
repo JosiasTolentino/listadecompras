@@ -48,7 +48,7 @@ export default function App() {
 
   const valorTotal = products
     .map((product) => Number(product.quantidade * product.valor))
-    .reduce((a, b) => a + b);
+    .reduce((a, b) => a + b, 0);
 
   return (
     <div className="app">

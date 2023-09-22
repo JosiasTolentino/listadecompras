@@ -139,6 +139,10 @@ button {
   display: none;
 }
 
+.hide2 {
+  display: none;
+}
+
 input[type="checkbox"] {
   accent-color: #0f880f;
 }
