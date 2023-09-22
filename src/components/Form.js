@@ -7,6 +7,15 @@ export default function Form({ onAddProduct }) {
   const [valor, setValor] = useState("");
   const categorias = ["Alimentação", "Higiene", "Limpeza", "Outros"];
 
+  const handleInputChange = (event) => {
+    let valor = event.target.value.slice(0, 6).replace(/[^0-9.]/g, "");
+    const decimalParts = valor.split(".");
+    if (decimalParts.length > 1) {
+      valor = `${decimalParts[0]}.${decimalParts[1].slice(0, 2)}`;
+    }
+    setValor(valor);
+  };
+
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -67,15 +76,11 @@ export default function Form({ onAddProduct }) {
       </select>
 
       <label>Valor:</label>
-      <input
-        placeholder="0,00"
-        type="number"
-        step={0.01}
-        value={valor}
-        onChange={(e) => setValor(Number(e.target.value))}
-      ></input>
+      <input type="text" value={valor} onChange={handleInputChange}></input>
 
-      <button className="add-button">Adicionar produto</button>
+      <button className="add-button" onSubmit={handleSubmit}>
+        Adicionar produto
+      </button>
     </form>
   );
 }

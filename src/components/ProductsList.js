@@ -9,8 +9,6 @@ export default function ProductsList({ products, setProducts, children }) {
     (product) => product.categoria === `${children}`
   ).length;
 
-  console.log(isEmpty);
-
   function handleOpen() {
     setIsOpen((isOpen) => !isOpen);
   }
@@ -65,7 +63,7 @@ export default function ProductsList({ products, setProducts, children }) {
               <span
                 style={product.packed ? { textDecoration: "line-through" } : {}}
               >
-                R$ {product.valor}
+                {(product.valor * 1).toFixed(2)}
               </span>
               <span
                 style={product.packed ? { textDecoration: "line-through" } : {}}
