@@ -144,7 +144,10 @@ input[type="checkbox"] {
 }
 
 .stats {
-  padding: 3rem 0 2rem 0;
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 0 6rem 0;
+  gap: 2rem;
   text-align: center;
 }
 
