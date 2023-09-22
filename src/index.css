@@ -166,3 +166,28 @@ input[type="checkbox"] {
     margin: 0 auto;
   }
 }
+
+@media (max-width: 480px) {
+  HTML {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 360px) {
+  HTML {
+    font-size: 45%;
+  }
+  body {
+    padding: 2rem;
+  }
+
+  .form {
+    align-items: center;
+    margin: 0 10%;
+    grid-template-columns: 1fr 1fr;
+  }
+  input,
+  select {
+    max-width: 90%;
+  }
+}
