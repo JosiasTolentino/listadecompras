@@ -21,6 +21,8 @@ export default function Form({ onAddProduct }) {
 
     if (!productName || !categoria || !quantidade || !valor) return;
 
+    if (valor === ".") return;
+
     const newProduct = {
       productName,
       categoria,
