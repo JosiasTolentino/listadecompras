@@ -18,9 +18,7 @@ export default function Form({ onAddProduct }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-
     if (!productName || !categoria || !quantidade || !valor) return;
-
     if (valor === ".") return;
 
     const newProduct = {
@@ -31,10 +29,8 @@ export default function Form({ onAddProduct }) {
       packed: false,
       id: Date.now(),
     };
-    console.log(newProduct);
 
     onAddProduct(newProduct);
-
     setProductName("");
     setCategoria("Alimentação");
     setQuantidade(1);
